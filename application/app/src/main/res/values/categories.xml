@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_labels">
+        <item>Music</item>
+    </string-array>
+    <string-array name="category_slugs">
+        <item>music</item>
+    </string-array>
+    <array name="subcategory_slugs">
+        <item>@array/music_slugs</item>
+    </array>
+    <array name="subcategory_labels">
+        <item>@array/music_labels</item>
+    </array>
+    <string-array name="music_slugs">
+        <item>alternative</item>
+        <item>blues</item>
+        <item>christian</item>
+        <item>gospel</item>
+        <item>classical</item>
+        <item>rock</item>
+        <item>country</item>
+        <item>electronic</item>
+        <item>folk</item>
+        <item>hiphop</item>
+        <item>jazz</item>
+        <item>latin</item>
+        <item>metal</item>
+        <item>pop</item>
+        <item>punk</item>
+        <item>randb</item>
+        <item>soul</item>
+        <item>reggae</item>
+    </string-array>
+    <string-array name="music_labels">
+        <item>Alternative</item>
+        <item>Blues</item>
+        <item>Christian</item>
+        <item>Gospel</item>
+        <item>Classical</item>
+        <item>Rock</item>
+        <item>Country</item>
+        <item>Electronic</item>
+        <item>Folk</item>
+        <item>Hip Hop</item>
+        <item>Jazz</item>
+        <item>Latin</item>
+        <item>Metal</item>
+        <item>Pop</item>
+        <item>Punk</item>
+        <item>R&amp;B</item>
+        <item>Soul</item>
+        <item>Reggae</item>
+    </string-array>
+</resources>

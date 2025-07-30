@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_gif_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.tutorial.TutorialActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/gif"
+            app:layout_constraintLeft_toLeftOf="@id/parentcontainer"
+            app:layout_constraintRight_toRightOf="@id/parentcontainer"
+            app:layout_constraintTop_toTopOf="@id/parentcontainer">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/mainColor"
+                android:fontFamily="@font/amaticsc_bold"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                app:layout_constraintLeft_toLeftOf="@+id/container"
+                app:layout_constraintTop_toTopOf="@+id/container" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/gif"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttons"
+            app:layout_constraintLeft_toLeftOf="@id/parentcontainer"
+            app:layout_constraintRight_toRightOf="@id/parentcontainer"
+            app:layout_constraintTop_toBottomOf="@+id/container">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="@+id/gif"
+                app:layout_constraintRight_toRightOf="@+id/gif"
+                app:layout_constraintTop_toTopOf="@+id/gif" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/parentcontainer"
+            app:layout_constraintLeft_toLeftOf="@+id/parentcontainer"
+            app:layout_constraintTop_toBottomOf="@+id/gif">
+
+            <android.widget.Button
+                android:id="@+id/next"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:background="@color/grey"
+                android:clickable="true"
+                android:fontFamily="@font/amaticsc_bold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/button_next"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/buttons"
+                app:layout_constraintRight_toRightOf="@+id/buttons"
+                app:layout_constraintTop_toBottomOf="@+id/buttons" />
+
+            <android.widget.Button
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:background="@color/grey"
+                android:clickable="true"
+                android:fontFamily="@font/amaticsc_bold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/button_back"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/buttons"
+                app:layout_constraintLeft_toLeftOf="@+id/buttons"
+                app:layout_constraintTop_toBottomOf="@+id/buttons" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

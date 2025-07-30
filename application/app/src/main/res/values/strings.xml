@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Eventhou</string>
+    <string name="icon_description">icon</string>
+
+    <!-- Login -->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_fullname">Full name</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_verification">Re-enter password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_register">Create a new account</string>
+    <string name="action_register_short">Register</string>
+    <string name="welcome">"Welcome "</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="sign_up">No account yet, sign up here</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="username">Username</string>
+    <string name="email">E-Mail</string>
+
+    <!-- Favourites -->
+    <string name="favourites">Favourites</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="this_week">This week</string>
+    <string name="next_weeks">Next weeks</string>
+
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+    <string name="muster_name">mustermann15</string>
+    <string name="muster_email">mustermann@email.de</string>
+    <string name="action_clear_event_history">Clear event history</string>
+    <string name="action_show_tutorial">Show tutorial</string>
+    <string name="action_sign_out_short">Sign out</string>
+
+    <!-- Swipe -->
+    <string name="home">Home</string>
+    <string name="no_events_message">There are no more events available. \nTry to change your filter settings, visit new locations or be patient to get new events.</string>
+    <string name="no_events_planned">No events planned</string>
+    <string name="overlay_up">More Info</string>
+
+    <!-- Filter -->
+    <string name="filter">Filter Your Events</string>
+    <string name="city">City</string>
+    <string name="city_text">choose your city</string>
+    <string name="category">Category</string>
+    <string name="category_text">choose your favourite categories</string>
+    <string name="date">Date</string>
+    <string name="date_text">choose a date</string>
+    <string name="filter_category">Choose your favourite category</string>
+    <string name="filter_city">Choose a city</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial_startpage">A short tutorial about how this app works</string>
+    <string name="tutorial_swipe">You can swipe through events</string>
+    <string name="tutorial_profile">You can look at your profile</string>
+    <string name="tutorial_filter">You can add filters</string>
+    <string name="tutorial_favourites">You can look at events you liked</string>
+    <string name="button_next">next</string>
+    <string name="button_back">back</string>
+    <string name="button_done">done</string>
+
+    <!-- App preferences -->
+    <string name="preference_filter_categories">com.example.eventhou.PREFERENCE_FILTER_CATEGORIES</string>
+    <string name="preference_filter_city">com.example.eventhou.PREFERENCE_FILTER_CITY</string>
+    <string name="preference_filter_date">com.example.eventhou.PREFERENCE_FILTER_DATE</string>
+    <string name="preference_event_history">com.example.eventhou.PREFERENCE_EVENT_HISTORY</string>
+
+</resources>

@@ -1,0 +1,19 @@
+{
+  "name": "NodeDBConnection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "firebase-admin": "^8.12.1",
+    "jsdom": "^16.2.2",
+    "node-fetch": "^2.6.0"
+  }
+}

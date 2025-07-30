@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="event"
+            type="com.example.eventhou.data.model.Event" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:clickable="true"
+        android:elevation="12dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mainColor">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/image_view_profile_pic"
+                    app:layout_constraintStart_toStartOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/favourite_artist_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amaticsc_regular"
+                        android:text="@{event.artistName + (event.title != null ? (` - ` + event.title) : ``)}"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Emma Watson, 26" />
+
+                    <TextView
+                        android:id="@+id/venue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@drawable/ic_baseline_place_20"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/amaticsc_regular"
+                        android:text="@{event.venueName}"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/favourite_artist_name"
+                        tools:text="Munich" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:drawableStart="@drawable/ic_baseline_date_range_20"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/amaticsc_regular"
+                        android:text="@{event.localizedDateStr()}"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintLeft_toRightOf="@+id/venue"
+                        app:layout_constraintTop_toTopOf="@+id/venue"
+                        tools:text="2020-02-05" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_view_profile_pic"
+                    android:layout_width="86dp"
+                    android:layout_height="0dp"
+                    android:background="#000000"
+                    app:image="@{event.artistImageSrc}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@drawable/event" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

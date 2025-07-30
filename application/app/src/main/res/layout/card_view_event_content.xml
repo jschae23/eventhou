@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="event"
+            type="com.example.eventhou.data.model.Event" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image_view_profile_pic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:image="@{event.artistImageSrc}"
+            app:layout_constraintBottom_toTopOf="@+id/event_description"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/event"
+            tools:layout_editor_absoluteX="15dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginVertical="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/image_view_profile_pic"
+            app:layout_constraintEnd_toEndOf="@+id/image_view_profile_pic">
+
+            <RelativeLayout
+                android:id="@+id/relativelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp">
+
+                <ImageView
+                    android:id="@+id/favouritesIconDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18sp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:contentDescription="@string/icon_description"
+                    app:srcCompat="@drawable/ic_baseline_favorite_24_grey" />
+
+                <ImageView
+                    android:id="@+id/favouritesIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18sp"
+                    android:contentDescription="@string/icon_description"
+                    app:srcCompat="@drawable/ic_baseline_favorite_24" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/favouritescount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amaticsc_bold"
+                android:shadowColor="@color/black"
+                android:shadowDx="2"
+                android:shadowDy="-2"
+                android:shadowRadius="5"
+                android:text="@{String.valueOf(event.popularity)}"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_profile_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/event_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amaticsc_regular"
+                android:text="@{event.artistName + (event.title != null ? (` - ` + event.title) : ``)}"
+                android:textColor="@android:color/black"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                tools:text="Emma Watson, 26" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/venue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2dp"
+                    android:drawableStart="@drawable/ic_baseline_place_20"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/amaticsc_regular"
+                    android:text="@{event.venueName}"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@+id/date"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="5 Miles Away" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2dp"
+                    android:drawableStart="@drawable/ic_baseline_date_range_20"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/amaticsc_regular"
+                    android:text="@{event.localizedDateStr()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@+id/category"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="2020-02-05" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2dp"
+                    android:drawableStart="@drawable/ic_baseline_music_note_20"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/amaticsc_regular"
+                    android:text="@{(event.categories != null ? event.categories.get(0).subCategoriesToString(45) : `no genre listed`)}"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="Blues, Jazz" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
